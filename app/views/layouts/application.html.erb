@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>BrandCommerce</title>
+  <title>Closet Uniform | <%= yield(:title) %></title>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= csrf_meta_tags %>
 </head>
