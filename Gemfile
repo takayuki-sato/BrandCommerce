@@ -39,11 +39,17 @@ gem 'coffee-rails', '4.0.1'
 
 group :development, :test  do
   gem 'rspec-rails'
+  gem 'guard-rspec'
+
+  gem 'spork-rails'
+  gem 'guard-spork'
+  gem 'childprocess'
 end
 
 group :test  do
   gem 'selenium-webdriver'
   gem 'capybara'
+  gem 'libnotify'
 end
 
 group :production do
