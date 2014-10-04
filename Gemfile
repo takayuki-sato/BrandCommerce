@@ -36,6 +36,7 @@ gem 'therubyracer', :platforms => :ruby
 # frontend library
 gem 'jquery-rails', '3.0.4'
 gem 'coffee-rails', '4.0.1'
+gem 'bootstrap-sass'
 
 group :development, :test  do
   gem 'rspec-rails'
