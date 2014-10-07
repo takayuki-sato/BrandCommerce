@@ -32,6 +32,7 @@ gem 'spring',      group: :development
 # gem 'debugger', group: [:development, :test]
 
 gem 'therubyracer', :platforms => :ruby
+gem 'bcrypt-ruby'
 
 # frontend library
 gem 'jquery-rails', '3.0.4'
