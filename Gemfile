@@ -33,11 +33,14 @@ gem 'spring',      group: :development
 
 gem 'therubyracer', :platforms => :ruby
 gem 'bcrypt-ruby'
+gem 'faker'
 
 # frontend library
 gem 'jquery-rails', '3.0.4'
 gem 'coffee-rails', '4.0.1'
 gem 'bootstrap-sass'
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
 
 group :development, :test  do
   gem 'rspec-rails'
