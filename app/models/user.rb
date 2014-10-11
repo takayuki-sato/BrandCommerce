@@ -17,6 +17,11 @@ class User < ActiveRecord::Base
     Digest::SHA1.hexdigest(token.to_s)
   end
 
+  def feed
+    # TODO
+    Item.all
+  end
+
   private
 
     def create_remember_token

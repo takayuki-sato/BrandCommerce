@@ -15,5 +15,10 @@ namespace :db do
                    password: password,
                    password_confirmation: password)
     end
+    players = Player.all
+    50.times do
+      description = Faker::Lorem.sentence(5)
+      players.each { |player| player.items.create!(description: description) }
+    end
   end
 end

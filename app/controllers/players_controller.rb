@@ -10,6 +10,9 @@ class PlayersController < ApplicationController
   # GET /players/1
   # GET /players/1.json
   def show
+    @player = Player.find(params[:id])
+    @items = @player.items.paginate(page: params[:page])
+    @item = @player.items.build if signed_in?
   end
 
   # GET /players/new
