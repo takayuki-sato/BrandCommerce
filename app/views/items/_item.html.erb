@@ -1,0 +1,11 @@
+<li>
+  <span class="description"><%= item.description %></span>
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(item.created_at) %> ago.
+  </span>
+  <% if current_user.admin? %>
+      <%= link_to "delete", item, method: :delete,
+                  data: { confirm: "You sure?" },
+                  title: item.description %>
+  <% end %>
+</li>

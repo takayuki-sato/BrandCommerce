@@ -158,4 +158,21 @@ describe "User pages" do
       end
     end
   end
+
+  describe "for signed-in users" do
+    let(:user) { FactoryGirl.create(:user) }
+    let(:player) { FactoryGirl.create(:player) }
+    before do
+      FactoryGirl.create(:item, player: player, content: "Lorem ipsum")
+      FactoryGirl.create(:item, player: player, content: "Dolor sit amet")
+      sign_in user
+      visit root_path
+    end
+
+    it "should render the user's feed" do
+      user.feed.each do |item|
+        expect(page).to have_selector("li##{item.id}", text: item.content)
+      end
+    end
+  end
 end

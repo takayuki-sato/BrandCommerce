@@ -9,4 +9,15 @@ FactoryGirl.define do
       admin true
     end
   end
+
+  factory :player do
+    sequence(:name)  { |n| "Person #{n}" }
+    sequence(:description) { |n| "Product #{n}" }
+  end
+
+  factory :item do
+    description "Lorem ipsum"
+    url "http:www.brandcommerce.com"
+    player
+  end
 end

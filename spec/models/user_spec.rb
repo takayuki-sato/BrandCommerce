@@ -116,4 +116,29 @@ describe User do
 
     it { should be_admin }
   end
+
+  describe "feed" do
+    before do
+      @user.save
+      @player = FactoryGirl.create(:player)
+      @player.save
+    end
+
+    let!(:older_item) do
+      FactoryGirl.create(:item, player: @player, created_at: 1.day.ago)
+    end
+    let!(:newer_item) do
+      FactoryGirl.create(:item, player: @player, created_at: 1.hour.ago)
+    end
+
+    describe "status" do
+      let(:unfollowed_post) do
+        FactoryGirl.create(:item, player: FactoryGirl.create(:player))
+      end
+
+      its(:feed) { should include(newer_item) }
+      its(:feed) { should include(older_item) }
+      #its(:feed) { should_not include(unfollowed_post) }
+    end
+  end
 end
