@@ -1,5 +1,6 @@
 <%= form_for(@item) do |f| %>
     <%= render 'shared/error_messages', object: f.object %>
+    <%= f.hidden_field :player_id, :value => @player.id %>
     <div class="field">
       <%= f.text_area :description, placeholder: "Compose new item..." %>
     </div>

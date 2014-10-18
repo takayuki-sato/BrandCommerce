@@ -29,11 +29,13 @@
     <div class="row">
       <aside class="span4">
         <section>
-          <%= render 'shared/user_info' %>
-        </section>
-        <section>
           <%= render 'shared/item_form' %>
         </section>
       </aside>
+    </div>
+    <div class="row">
+        <div class="span8">
+          <%= render 'follow_form' if signed_in? %>
+        </div>
     </div>
 <% end %>

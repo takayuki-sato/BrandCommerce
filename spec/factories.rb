@@ -20,4 +20,9 @@ FactoryGirl.define do
     url "http:www.brandcommerce.com"
     player
   end
+
+  factory :relationship do
+    user
+    player
+  end
 end

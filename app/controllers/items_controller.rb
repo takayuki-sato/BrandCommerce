@@ -6,10 +6,11 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @item = current_user.items.build(item_params)
+    @player = Player.find(item_params[:player_id])
+    @item = @player.items.build(item_params)
     if @item.save
       flash[:success] = "Item created!"
-      redirect_to root_url
+      redirect_to players_url
     else
       @feed_items = []
       render 'static_pages/home'
@@ -24,7 +25,7 @@ class ItemsController < ApplicationController
   private
 
     def item_params
-      params.require(:item).permit(:description)
+      params.require(:item).permit(:description, :player_id)
     end
 
     def correct_user
