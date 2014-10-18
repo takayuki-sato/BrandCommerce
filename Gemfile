@@ -41,6 +41,7 @@ gem 'coffee-rails', '4.0.1'
 gem 'bootstrap-sass'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
+gem "angular-gem"
 
 group :development, :test  do
   gem 'rspec-rails'

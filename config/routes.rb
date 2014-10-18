@@ -3,8 +3,9 @@ Rails.application.routes.draw do
   resources :items, only: [:create, :destroy]
   resources :relationships, only: [:create, :destroy]
   get 'users/new'
+  get 'static_pages/index'
 
-  root  'static_pages#about'
+  root  'static_pages#index'
   match '/signup',  to: 'users#new', via: 'get'
   match '/signin',  to: 'sessions#new',         via: 'get'
   match '/signout', to: 'sessions#destroy',     via: 'delete'
