@@ -14,6 +14,8 @@ describe User do
   it { should respond_to(:authenticate) }
   it { should respond_to(:remember_token) }
   it { should respond_to(:admin) }
+  it { should respond_to(:relationships) }
+  it { should respond_to(:players) }
 
   it { should be_valid }
   it { should_not be_admin }
@@ -139,6 +141,24 @@ describe User do
       its(:feed) { should include(newer_item) }
       its(:feed) { should include(older_item) }
       #its(:feed) { should_not include(unfollowed_post) }
+    end
+  end
+
+  describe "following" do
+    let(:player) { FactoryGirl.create(:player) }
+    before do
+      @user.save
+      @user.follow!(player)
+    end
+
+    it { should be_following(player) }
+    its(:players) { should include(player) }
+
+    describe "and unfollowing" do
+      before { @user.unfollow!(player) }
+
+      it { should_not be_following(player) }
+      its(:players) { should_not include(player) }
     end
   end
 end

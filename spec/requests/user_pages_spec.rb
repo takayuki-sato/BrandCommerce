@@ -174,5 +174,14 @@ describe "User pages" do
         expect(page).to have_selector("li##{item.id}", text: item.content)
       end
     end
+
+    describe "follower/following counts" do
+      before do
+        user.follow!(player)
+        visit root_path
+      end
+
+      it { should have_link("1 followers", href: players_user_path(user)) }
+    end
   end
 end

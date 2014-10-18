@@ -6,6 +6,8 @@ describe Player do
   subject { @player }
 
   it { should respond_to(:items) }
+  it { should respond_to(:relationships) }
+  it { should respond_to(:users) }
 
   describe "item associations" do
 

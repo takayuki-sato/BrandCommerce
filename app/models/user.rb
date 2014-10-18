@@ -9,6 +9,9 @@ class User < ActiveRecord::Base
 
   has_secure_password
 
+  has_many :relationships
+  has_many :players, :through => :relationships
+
   def User.new_remember_token
     SecureRandom.urlsafe_base64
   end
@@ -20,6 +23,18 @@ class User < ActiveRecord::Base
   def feed
     # TODO
     Item.all
+  end
+
+  def following?(player)
+    relationships.find_by(player_id: player.id)
+  end
+
+  def follow!(player)
+    relationships.create!(player_id: player.id)
+  end
+
+  def unfollow!(player)
+    relationships.find_by(player_id: player.id).destroy
   end
 
   private

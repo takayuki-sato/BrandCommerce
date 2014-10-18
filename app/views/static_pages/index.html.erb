@@ -1,0 +1,16 @@
+<div>
+  <label>Name:</label>
+  <input type="text" ng-model="yourName" placeholder="Enter a name here">
+  <br/>
+  <font size="4">Hello {{yourName}}!</font>
+</div>
+<div class="content" ng-controller="HomeCtrl">
+  <div class="content_div">
+    <div ng-repeat="player in players">
+      {{player.name}}&nbsp;&nbsp;|&nbsp;&nbsp;{{player.description}}
+    </div>
+  </div>
+  <div class="content_div">
+    {{foo}}
+  </div>
+</div>
