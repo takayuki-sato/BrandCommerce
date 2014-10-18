@@ -15,10 +15,15 @@ namespace :db do
                    password: password,
                    password_confirmation: password)
     end
-    Player.create!(name: Faker::Name.name,
-                 description: "A good player")
+    20.times do |n|
+      name  = Faker::Name.name
+      Player.create!(
+          name: name,
+          description: "A good player"
+      )
+    end
     players = Player.all
-    50.times do
+    5.times do
       description = Faker::Lorem.sentence(5)
       players.each { |player| player.items.create!(description: description) }
     end

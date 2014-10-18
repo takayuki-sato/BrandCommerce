@@ -1,21 +1,22 @@
 <!DOCTYPE html>
-<html ng-app>
+<html ng-app="brandcommerce">
 <head>
   <title><%= full_title(yield(:title)) %></title>
   <%= javascript_include_tag "application" %>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= csrf_meta_tags %>
   <%= render 'layouts/shim' %>
-  <script src="/assets/application.js"></script>
 </head>
 <body>
   <%= render 'layouts/header' %>
-  <div class="container" ng-view>
-    <% flash.each do |key, value| %>
-        <div class="alert alert-<%= key %>"><%= value %></div>
-    <% end %>
-    <%= yield %>
-    <%= render 'layouts/footer' %>
+  <div class="view-container">
+      <div class="container" ng-view class="view-frame">
+        <% flash.each do |key, value| %>
+            <div class="alert alert-<%= key %>"><%= value %></div>
+        <% end %>
+        <%= yield %>
+        <%= render 'layouts/footer' %>
+      </div>
   </div>
 </body>
 </html>

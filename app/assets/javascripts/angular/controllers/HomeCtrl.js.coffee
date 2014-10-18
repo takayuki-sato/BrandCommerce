@@ -1,4 +1,4 @@
-@app.controller 'HomeCtrl', ['$scope', 'Players', ($scope, Players) ->
+@app.controller 'HomeCtrl', ['$scope', ($scope) ->
   $scope.foo = 'bar'
-  $scope.players = Players.query()
+  #$scope.players = Players.query()
 ]
