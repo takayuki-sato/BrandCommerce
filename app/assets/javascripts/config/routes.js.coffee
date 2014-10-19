@@ -9,6 +9,7 @@
       controller: 'PlayerShowCtrl'
     }).
     otherwise({
-      redirectTo: '/players'
+      templateUrl: '../templates/home.html',
+      controller: 'HomeCtrl'
     })
 ])

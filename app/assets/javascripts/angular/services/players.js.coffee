@@ -1,3 +1,3 @@
-App.factory 'Players', ['$resource', ($resource) ->
+@app.factory 'Players', ['$resource', ($resource) ->
     $resource '/players/index'
   ]
