@@ -45,6 +45,7 @@ gem "angular-gem"
 gem 'angular-rails-templates'
 gem "slim"
 gem 'html2slim'
+gem 'masonry-rails'
 
 group :development, :test  do
   gem 'rspec-rails'
