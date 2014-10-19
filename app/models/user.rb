@@ -33,6 +33,10 @@ class User < ActiveRecord::Base
     relationships.create!(player_id: player.id)
   end
 
+  def follow(player)
+    relationships.create(player_id: player.id)
+  end
+
   def unfollow!(player)
     relationships.find_by(player_id: player.id).destroy
   end
