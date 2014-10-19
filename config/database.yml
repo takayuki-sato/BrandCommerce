@@ -81,6 +81,5 @@ test:
 #
 production:
   <<: *default
-  database: BrandCommerce_production
-  username: BrandCommerce
-  password: <%= ENV['BRANDCOMMERCE_DATABASE_PASSWORD'] %>
+  #database: BrandCommerce_production
+  #password: <%= ENV['BRANDCOMMERCE_DATABASE_PASSWORD'] %>
